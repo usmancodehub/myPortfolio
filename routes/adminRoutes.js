@@ -10,7 +10,7 @@ const registerValidation = [
   body('email').isEmail().withMessage('Valid email is required').normalizeEmail(),
   body('password').isLength({ min: 6 }).withMessage('Password must be at least 6 characters long')
 ];
-
+//hello
 const loginValidation = [
   body('email').isEmail().withMessage('Valid email is required').normalizeEmail(),
   body('password').notEmpty().withMessage('Password is required')
@@ -51,15 +51,15 @@ router.post('/login', validate(loginValidation), adminController.login);
 router.get('/profile', auth, adminController.getCurrentUser);
 router.get('/dashboard', auth, adminController.getDashboardStats);
 
-router.put('/profile', 
-  auth, 
-  validate(updateProfileValidation), 
+router.put('/profile',
+  auth,
+  validate(updateProfileValidation),
   adminController.updateProfile
 );
 
-router.put('/change-password', 
-  auth, 
-  validate(changePasswordValidation), 
+router.put('/change-password',
+  auth,
+  validate(changePasswordValidation),
   adminController.changePassword
 );
 

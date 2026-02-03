@@ -11,6 +11,9 @@ const path = require('path');
 dotenv.config();
 
 const app = express();
+app.use(cors({
+  origin: "https://usmancodehub.github.io"
+}));
 
 // Security middleware
 app.use(helmet({
@@ -31,6 +34,7 @@ const allowedOrigins = [
   'http://localhost:3000',
   'http://localhost:5500',
   'http://127.0.0.1:5500',
+  'https://usmancodehub.github.io',
   'null' // For files opened directly in browser
 ].filter(Boolean);
 

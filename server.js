@@ -11,9 +11,6 @@ const path = require('path');
 dotenv.config();
 
 const app = express();
-app.use(cors({
-  origin: "https://usmancodehub.github.io"
-}));
 
 // Security middleware
 app.use(helmet({
